@@ -32,4 +32,11 @@ public class Movement : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstaculo"))
+        {
+            GameManager.instance.GameOver();
+        }
+    }
 }
