@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
     }
     void Jump()
     {
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector2.up * jumpForce;
         }
