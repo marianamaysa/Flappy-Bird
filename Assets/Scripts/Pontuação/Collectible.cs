@@ -6,7 +6,7 @@ public class Collectible : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Bullet"))
         {
             ScoreManager.instance.AddScore(5);
             Destroy(gameObject);

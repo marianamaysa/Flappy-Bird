@@ -433,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472777412
 Transform:
   m_ObjectHideFlags: 0
@@ -866,8 +866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a105196bb2aa73e4da13d60cacc8103d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 5
-  heightRange: 1.5
+  spawnInterval: 1
+  heightRange: 0
   obstaculeObj: {fileID: 2230212352534921428, guid: 092732f4ad308404ab739221f7b83fdf, type: 3}
   spawnPosition: 5
 --- !u!114 &884439871
