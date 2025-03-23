@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 584570023}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -848,7 +848,7 @@ Transform:
   m_GameObject: {fileID: 884439868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.17, y: 0.04, z: -0.03656785}
+  m_LocalPosition: {x: 4.1, y: 1.61, z: -0.03656785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -866,8 +866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a105196bb2aa73e4da13d60cacc8103d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 3
-  heightRange: 3
+  spawnInterval: 5
+  heightRange: 1.5
   obstaculeObj: {fileID: 2230212352534921428, guid: 092732f4ad308404ab739221f7b83fdf, type: 3}
   spawnPosition: 5
 --- !u!114 &884439871
@@ -884,6 +884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreTxt: {fileID: 1735647749}
+  highScoreTxt: {fileID: 550669528}
+  currentScoreTxt: {fileID: 1975339100}
 --- !u!1 &985607229
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +968,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 985607232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943597800}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &985607232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1943597799}
+  - component: {fileID: 1943597800}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1731,6 +1746,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943597800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943597798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a052d0b487b344ab14d59e102adf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 169576382}
 --- !u!1 &1975339098
 GameObject:
   m_ObjectHideFlags: 0

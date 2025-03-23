@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
-    [SerializeField] private float spawnInterval = 3f;
-    [SerializeField] private float heightRange = 3f;
+    [SerializeField] private float spawnInterval;
+    [SerializeField] private float heightRange;
     [SerializeField] private GameObject obstaculeObj;
-    [SerializeField] private float spawnPosition = 5f;
+    [SerializeField] private float spawnPosition;
     private float cool_down;
 
     void Start()

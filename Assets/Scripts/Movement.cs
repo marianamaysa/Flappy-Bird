@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstaculo"))
         {
             GameManager.instance.GameOver();
+            ScoreManager.instance.GameOverScore();
         }
     }
 }
