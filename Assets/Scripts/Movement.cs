@@ -4,21 +4,38 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [Header("Jump")]
     [SerializeField] float jumpForce;
     [SerializeField] float rotationSpeed;
-    private Rigidbody2D rb;
 
+    [Header("Bullet")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform pointBullet;
+    [SerializeField] private float intervalShoot;
+
+    private Rigidbody2D rb;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        timer = intervalShoot;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+
+        if (timer <= 0f)
+        {
+            Shoot();
+            timer = intervalShoot;
+        }
+
         Jump();
+
     }
 
     private void FixedUpdate()
@@ -39,5 +56,10 @@ public class Movement : MonoBehaviour
             GameManager.instance.GameOver();
             ScoreManager.instance.GameOverScore();
         }
+    }
+
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
     }
 }
