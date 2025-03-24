@@ -50,26 +50,20 @@ public class BossMovement : MonoBehaviour
         Instantiate(bulletPref, pointBullet.position, Quaternion.identity);
     }
 
-    /*
-    [SerializeField] private float shootInterval;
-    IEnumerator ShootRoutine()
-    {
-        while (true)
-        {
-            Shoot();
-            yield return new WaitForSeconds(shootInterval);
-        }
-    }
-    */
-    public void Damage(int damage)
-    {
-        Debug.Log(life);
-        life -= damage;
 
-        if (life <= 0)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-            Morrer();
+            life -= 1;
+            Debug.Log(life);
+
+            if (life <= 0)
+            {
+                Morrer();
+            }
         }
+
     }
 
     void Morrer()

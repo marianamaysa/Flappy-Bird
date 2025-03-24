@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1873189225308576040}
   - component: {fileID: 2431597343491778787}
   - component: {fileID: 7393105364138520469}
-  - component: {fileID: 7901625660501529707}
+  - component: {fileID: 2054159742714179671}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Bullet
+  m_TagString: BulletEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,16 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &7901625660501529707
+--- !u!114 &2054159742714179671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527493265733456616}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa1a32754549d145a6ef38bd22bd144, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e79b66722beade428a4dcf2b81f5867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -171,10 +171,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3999574998173256061}
-  - component: {fileID: 359663977170955910}
   m_Layer: 0
   m_Name: BulletEnemy
-  m_TagString: Bullet
+  m_TagString: BulletEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,16 +194,3 @@ Transform:
   - {fileID: 7464217824599587454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &359663977170955910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7688093849985532257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e79b66722beade428a4dcf2b81f5867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
