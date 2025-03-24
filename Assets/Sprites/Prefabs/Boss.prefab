@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4512169662497763750}
   - component: {fileID: 8370953991400562285}
   - component: {fileID: 2804623352379933970}
-  - component: {fileID: 7040597763743632731}
+  - component: {fileID: 9049686942663994875}
   m_Layer: 0
   m_Name: SprBoss
   m_TagString: Boss
@@ -185,33 +185,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &7040597763743632731
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &9049686942663994875
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886606372215225925}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e79b66722beade428a4dcf2b81f5867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &8016438102489517346
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,9 +207,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2190832595973882092}
-  - component: {fileID: 9156431301416060315}
   - component: {fileID: 2998582883160501057}
-  - component: {fileID: 5719300285149159788}
+  - component: {fileID: 4034034670140383129}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -247,24 +232,6 @@ Transform:
   - {fileID: 5987338088056995690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9156431301416060315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8016438102489517346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e138d0c45f48f5d4c8e869588c358f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  targetPositionX: 4
-  life: 5
-  bulletPref: {fileID: 7688093849985532257, guid: 4f9d6ac33b88f5e4b840b4210f935305, type: 3}
-  pointBullet: {fileID: 4284447405498310020}
-  shootInterval: 1
 --- !u!61 &2998582883160501057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,30 +277,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &5719300285149159788
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &4034034670140383129
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016438102489517346}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e138d0c45f48f5d4c8e869588c358f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  targetPositionX: 4
+  life: 5
+  bulletPref: {fileID: 7688093849985532257, guid: 4f9d6ac33b88f5e4b840b4210f935305, type: 3}
+  pointBullet: {fileID: 4284447405498310020}
+  intervalShoot: 0
+  shootInterval: 0

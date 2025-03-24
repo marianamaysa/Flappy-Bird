@@ -12,9 +12,16 @@ public class BossMovement : MonoBehaviour
     [Header("Tiro")]
     [SerializeField] GameObject bulletPref;
     [SerializeField] private Transform pointBullet;
+    [SerializeField] private int intervalShoot;
+    private float timer;
 
 
     private bool checkBossPos = false;
+
+    private void Start()
+    {
+        timer = intervalShoot;
+    }
 
     void Update()
     {
@@ -26,29 +33,13 @@ public class BossMovement : MonoBehaviour
             {
                 checkBossPos = true;
                 transform.position = new Vector3(targetPositionX, transform.position.y, transform.position.z);
-
-                StartCoroutine(ShootRoutine());
-
             }
         }
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPref, pointBullet.position, Quaternion.identity);
-        Bullets bulletScript = bullet.GetComponent<Bullets>();
-
-        //bulletScript.SetDirection(Vector3.left);
-
-        if (bulletScript != null)
-        {
-            bulletScript.origem = OrigemBullet.Enemy;
-            bulletScript.SetDirection(Vector3.left);
-        }
-        else
-        {
-            Debug.Log("Componente Bullets não encontrado");
-        }
+        Instantiate(bulletPref, pointBullet.position, Quaternion.identity);
     }
 
     [SerializeField] private float shootInterval;

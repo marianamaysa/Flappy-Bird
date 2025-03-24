@@ -57,19 +57,8 @@ public class Movement : MonoBehaviour
             ScoreManager.instance.GameOverScore();
         }
     }
-
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
-        Bullets bulletScript = bullet.GetComponent<Bullets>();
-        if (bulletScript != null)
-        {
-            bulletScript.origem = OrigemBullet.Player; // Ou OrigemBullet.Enemy, conforme o caso
-            bulletScript.SetDirection(Vector3.right);
-        }
-        else
-        {
-            Debug.LogError("O componente não foi encontrado");
-        }
+        Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
     }
 }
