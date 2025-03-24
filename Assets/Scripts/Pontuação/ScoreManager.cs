@@ -77,4 +77,9 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public int CurrentScore
+    {
+        get { return score; }
+    }
+
 }
