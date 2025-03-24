@@ -7,6 +7,7 @@ public class BossMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float targetPositionX;
+    [SerializeField] private int life = 5;
 
     [Header("Tiro")]
     [SerializeField] GameObject bulletPref;
@@ -42,11 +43,12 @@ public class BossMovement : MonoBehaviour
 
         if (bulletScript != null)
         {
+            bulletScript.origem = OrigemBullet.Enemy;
             bulletScript.SetDirection(Vector3.left);
         }
         else
         {
-            Debug.Log("Componente Bullets não encontrado no prefab!");
+            Debug.Log("Componente Bullets não encontrado");
         }
     }
 
@@ -58,5 +60,21 @@ public class BossMovement : MonoBehaviour
             Shoot();
             yield return new WaitForSeconds(shootInterval);
         }
+    }
+
+    public void Damage(int dano)
+    {
+        Debug.Log(life);
+        life -= dano;
+
+        if (life <= 0)
+        {
+            Morrer();
+        }
+    }
+
+    void Morrer()
+    {
+        Destroy(gameObject);
     }
 }

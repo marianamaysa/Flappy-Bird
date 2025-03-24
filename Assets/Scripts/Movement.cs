@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
     }
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector2.up * jumpForce;
         }
@@ -62,7 +62,14 @@ public class Movement : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
         Bullets bulletScript = bullet.GetComponent<Bullets>();
-
-        bulletScript.SetDirection(Vector3.right);
+        if (bulletScript != null)
+        {
+            bulletScript.origem = OrigemBullet.Player; // Ou OrigemBullet.Enemy, conforme o caso
+            bulletScript.SetDirection(Vector3.right);
+        }
+        else
+        {
+            Debug.LogError("O componente não foi encontrado");
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Obstaculo
   - Bullet
   - Score
+  - Boss
   layers:
   - Default
   - TransparentFX

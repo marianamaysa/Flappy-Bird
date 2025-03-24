@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37972ba188d19b64e8804c8cebe78bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  score: 50
   scoreTxt: {fileID: 1735647749}
   highScoreTxt: {fileID: 550669528}
   currentScoreTxt: {fileID: 1975339100}
