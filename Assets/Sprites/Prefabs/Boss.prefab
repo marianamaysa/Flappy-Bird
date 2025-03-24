@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4512169662497763750}
   - component: {fileID: 8370953991400562285}
   - component: {fileID: 2804623352379933970}
-  - component: {fileID: 9049686942663994875}
   m_Layer: 0
   m_Name: SprBoss
   m_TagString: Boss
@@ -185,19 +184,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9049686942663994875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886606372215225925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e79b66722beade428a4dcf2b81f5867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!1 &8016438102489517346
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +278,6 @@ MonoBehaviour:
   speed: 2
   targetPositionX: 4
   life: 5
-  bulletPref: {fileID: 7688093849985532257, guid: 4f9d6ac33b88f5e4b840b4210f935305, type: 3}
+  bulletPref: {fileID: 7688093849985532257, guid: f342e8c89c43058478776a41fe2bbba7, type: 3}
   pointBullet: {fileID: 4284447405498310020}
-  intervalShoot: 0
-  shootInterval: 0
+  intervalShoot: 3

@@ -35,6 +35,14 @@ public class BossMovement : MonoBehaviour
                 transform.position = new Vector3(targetPositionX, transform.position.y, transform.position.z);
             }
         }
+
+        timer -= Time.deltaTime;
+
+        if (timer <= 0f)
+        {
+            Shoot();
+            timer = intervalShoot;
+        }
     }
 
     void Shoot()
@@ -42,6 +50,7 @@ public class BossMovement : MonoBehaviour
         Instantiate(bulletPref, pointBullet.position, Quaternion.identity);
     }
 
+    /*
     [SerializeField] private float shootInterval;
     IEnumerator ShootRoutine()
     {
@@ -51,7 +60,7 @@ public class BossMovement : MonoBehaviour
             yield return new WaitForSeconds(shootInterval);
         }
     }
-
+    */
     public void Damage(int damage)
     {
         Debug.Log(life);

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//public enum OrigemBullet { Player, Enemy }
 public class Bullets : MonoBehaviour
 {
     [SerializeField] private float speed;
@@ -11,5 +9,4 @@ public class Bullets : MonoBehaviour
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
-
 }
