@@ -60,6 +60,9 @@ public class Movement : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, pointBullet.position, Quaternion.identity);
+        Bullets bulletScript = bullet.GetComponent<Bullets>();
+
+        bulletScript.SetDirection(Vector3.right);
     }
 }
