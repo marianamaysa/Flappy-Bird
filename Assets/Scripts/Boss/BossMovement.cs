@@ -35,7 +35,6 @@ public class BossMovement : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("chegou");
         GameObject bullet = Instantiate(bulletPref, pointBullet.position, Quaternion.identity);
         Bullets bulletScript = bullet.GetComponent<Bullets>();
 
@@ -62,10 +61,10 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    public void Damage(int dano)
+    public void Damage(int damage)
     {
         Debug.Log(life);
-        life -= dano;
+        life -= damage;
 
         if (life <= 0)
         {

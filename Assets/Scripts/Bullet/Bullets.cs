@@ -28,10 +28,10 @@ public class Bullets : MonoBehaviour
         {
             Debug.Log("colidiu boss");
 
-            BossMovement enemy = other.GetComponent<BossMovement>();
+            BossMovement enemy = other.GetComponentInParent<BossMovement>();
             if(enemy != null)
             {
-                enemy.Damage(damage);
+                enemy.Damage(1);
             }
         }
         else if (origem == OrigemBullet.Enemy && other.CompareTag("Player"))
