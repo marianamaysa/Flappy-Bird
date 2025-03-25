@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
         if(highScoreTxt != null)
         {
             int highScore = PlayerPrefs.GetInt("HighScore", 0);
-            highScoreTxt.text = "High Score: " + highScore.ToString();
+            highScoreTxt.text = highScore.ToString();
         }
 
         //currentScore.text = currentScore.ToString();
@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("oii");
         if (currentScoreTxt != null)
         {
-            currentScoreTxt.text = "Score: " + score.ToString();
+            currentScoreTxt.text = score.ToString();
         }
 
         int storedHighScore = PlayerPrefs.GetInt("HighScore", 0);
@@ -72,7 +72,7 @@ public class ScoreManager : MonoBehaviour
 
             if (highScoreTxt != null)
             {
-                highScoreTxt.text = "High Score: " + storedHighScore.ToString();
+                highScoreTxt.text = storedHighScore.ToString();
             }
         }
     }

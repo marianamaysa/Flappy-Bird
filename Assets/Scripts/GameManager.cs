@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Star Game")]
     private bool gameStart = false;
+    public GameObject menu;
+    public GameObject tutorial;
 
     [Header("Pause Game")]
     public GameObject pauseCanvas;
@@ -30,8 +32,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameStart && Input.GetKeyDown(KeyCode.Space))
+        if (!gameStart && Input.GetMouseButtonDown(0))
         {
+            menu.SetActive(false);
+            tutorial.SetActive(true);
+        }
+
+        if (tutorial.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        {
+            tutorial.SetActive(false);
             GameStart();
         }
 
@@ -46,7 +55,6 @@ public class GameManager : MonoBehaviour
                 Resume();
             }
         }
-
     }
 
     public void GameStart()
@@ -76,5 +84,10 @@ public class GameManager : MonoBehaviour
     {
         pauseCanvas.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
