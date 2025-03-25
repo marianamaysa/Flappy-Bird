@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [Header("Star Game")]
     private bool gameStart = false;
 
+    [Header("Pause Game")]
+    public GameObject pauseCanvas;
+
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +34,19 @@ public class GameManager : MonoBehaviour
         {
             GameStart();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1f)
+            {
+                Pause();
+            }
+            else if (Time.timeScale == 0f)
+            {
+                Resume();
+            }
+        }
+
     }
 
     public void GameStart()
@@ -48,5 +64,17 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Pause()
+    {
+        pauseCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        pauseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
 }
